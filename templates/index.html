@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Approval Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        <h1>💳 Credit Card Approval Prediction</h1>
+        <p>Enter applicant details to predict approval status.</p>
+    </div>
+
+    <form action="/predict" method="POST">
+
+        <div class="form-grid">
+
+            <!-- Gender -->
+            <div class="input-box">
+                <label>Gender</label>
+                <select name="gender">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <!-- Own Car -->
+            <div class="input-box">
+                <label>Own Car</label>
+                <select name="car">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <!-- Own Real Estate -->
+            <div class="input-box">
+                <label>Own Real Estate</label>
+                <select name="realty">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <!-- Income -->
+            <div class="input-box">
+                <label>Annual Income</label>
+                <input type="number" name="income" placeholder="Enter income" required>
+            </div>
+
+            <!-- Income Type -->
+            <div class="input-box">
+                <label>Income Type</label>
+                <select name="income_type">
+                    <option value="4">Working</option>
+                    <option value="0">Commercial Associate</option>
+                    <option value="1">Pensioner</option>
+                    <option value="2">State Servant</option>
+                    <option value="3">Student</option>
+                </select>
+            </div>
+
+            <!-- Education -->
+            <div class="input-box">
+                <label>Education</label>
+                <select name="education">
+                    <option value="1">Higher Education</option>
+                    <option value="4">Secondary / Secondary Special</option>
+                    <option value="2">Incomplete Higher</option>
+                    <option value="3">Lower Secondary</option>
+                    <option value="0">Academic Degree</option>
+                </select>
+            </div>
+
+            <!-- Family Status -->
+            <div class="input-box">
+                <label>Family Status</label>
+                <select name="family_status">
+                    <option value="1">Married</option>
+                    <option value="3">Single / Not Married</option>
+                    <option value="0">Civil Marriage</option>
+                    <option value="2">Separated</option>
+                    <option value="4">Widow</option>
+                </select>
+            </div>
+
+            <!-- Housing -->
+            <div class="input-box">
+                <label>Housing Type</label>
+                <select name="housing">
+                    <option value="1">House / Apartment</option>
+                    <option value="5">With Parents</option>
+                    <option value="2">Municipal Apartment</option>
+                    <option value="4">Rented Apartment</option>
+                    <option value="3">Office Apartment</option>
+                    <option value="0">Co-op Apartment</option>
+                </select>
+            </div>
+
+            <!-- Children -->
+            <div class="input-box">
+                <label>Children</label>
+                <input type="number" name="children" min="0" required>
+            </div>
+
+            <!-- Family Members -->
+            <div class="input-box">
+                <label>Family Members</label>
+                <input type="number" name="family_members" min="1" step="1" required>
+            </div>
+
+            <!-- Age -->
+            <div class="input-box">
+                <label>Age (Years)</label>
+                <input type="number" name="age" min="18" required>
+            </div>
+
+            <!-- Employment -->
+            <div class="input-box">
+                <label>Years Employed</label>
+                <input type="number" name="employment" min="0" required>
+            </div>
+
+        </div>
+
+        <button class="predict-btn" type="submit">
+            Predict Approval
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
